@@ -1,182 +1,334 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FLORIQUE - Jasa Taman Profesional, pengalaman 12 tahun, termurah di Jabodetabek. Konsultasi Gratis.">
-<title>FLORIQUE - Jasa Taman Profesional</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FLORIQUE - Jasa Taman Profesional (Termurah Jabodetabek)</title>
+<meta name="description" content="FLORIQUE — Jasa Taman Profesional, pengalaman 12 tahun, termurah di Jabodetabek. Desain, Perawatan, Renovasi, dan Pembuatan Taman dari nol. Konsultasi Gratis.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-    font-family:'Roboto',sans-serif;
-    background:url('latar_belakang.png') no-repeat center center fixed;
-    background-size:cover;
-    position:relative;
-}
-body::before{
-    content:"";position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,128,0,0.3);pointer-events:none;z-index:-1;
-}
-header{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:10px 20px;background:rgba(0,0,0,0.8);color:#fff;
-    position:sticky;top:0;z-index:500;
-}
-header img{height:60px;}
-nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:500;}
-nav a:hover{color:#ffeb3b;}
-.hero{
-    height:80vh;display:flex;flex-direction:column;
-    justify-content:center;align-items:center;text-align:center;
-    color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,0.7);
-}
-.hero h1{font-size:3em;margin-bottom:10px;}
-.hero p{font-size:1.5em;margin-bottom:20px;font-weight:700;}
-.cta{
-    padding:12px 25px;background:linear-gradient(45deg,#2e7d32,#81c784);
-    color:#fff;text-decoration:none;font-weight:700;border-radius:8px;
-    transition:0.5s;display:inline-block;
-}
-.cta:hover{transform:scale(1.1);background:linear-gradient(45deg,#1b5e20,#66bb6a);}
-section{padding:60px 20px;}
-h2,h3{text-align:center;font-weight:700;margin-bottom:30px;}
-.gallery-slider{
-    display:flex;overflow-x:auto;gap:10px;
-    scroll-behavior:smooth;padding-bottom:10px;
-}
-.gallery-slider::-webkit-scrollbar{height:8px;}
-.gallery-slider::-webkit-scrollbar-thumb{background:#2e7d32;border-radius:4px;}
-.gallery-slider img{
-    flex:0 0 auto;width:200px;height:150px;object-fit:cover;
-    border-radius:8px;transition:0.3s;cursor:pointer;
-}
-.gallery-slider img:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,0.5);}
-.wa-float{
-    position:fixed;right:20px;background:#25D366;color:#fff;
-    padding:15px 20px;border-radius:50px;font-size:18px;
-    text-decoration:none;display:flex;align-items:center;
-    box-shadow:0 6px 12px rgba(0,0,0,0.3);z-index:1000;transition:0.3s;
-}
-.wa-float:hover{transform:scale(1.2);}
-.wa-float img{height:25px;margin-right:10px;}
-.leaf{
-    position:absolute;width:30px;height:30px;
-    background:url('leaf.png') no-repeat center/contain;top:-50px;
-    animation:fall linear infinite;
-}
-@keyframes fall{0%{transform:translateY(0) rotate(0deg);}100%{transform:translateY(100vh) rotate(360deg);}}
-footer{background:rgba(0,0,0,0.8);color:#fff;text-align:center;padding:20px;}
-@media(max-width:768px){.gallery-slider img{width:150px;height:100px;}}
+  /* Reset & base */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, Arial, sans-serif;
+    color: #fff;
+    /* Background image + tint hijau transparan */
+    background:
+      linear-gradient(rgba(18,40,26,0.60), rgba(18,40,26,0.60)),
+      url('latar_belakang.png') center / cover no-repeat fixed;
+    /* anti white gap */
+    image-rendering: -webkit-optimize-contrast;
+  }
+  img { display:block; max-width:100%; height:auto; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: saturate(120%) blur(4px);
+    padding: 10px 18px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand img { height: 44px; }
+  .brand .title { font-weight:700; letter-spacing:.5px; }
+
+  nav a {
+    color:#fff; text-decoration:none; font-weight:600; margin-left:18px;
+  }
+  nav a:hover { text-decoration: underline; }
+
+  /* Sections */
+  section { padding: 56px 18px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    padding: 80px 18px 50px;
+    text-align: center;
+    background: radial-gradient(80% 60% at 50% 40%, rgba(0,0,0,0.35), rgba(0,0,0,0) 70%);
+  }
+  .hero h1 { font-size: 2.25rem; margin: 0 0 10px; }
+  .hero p { font-size: 1.1rem; opacity: .95; margin-bottom: 20px; }
+  .cta {
+    display:inline-block; padding:12px 22px; border-radius: 10px;
+    background:#2ecc71; color:#0e1b12; font-weight:700;
+    box-shadow: 0 6px 24px rgba(46,204,113,.25);
+  }
+  .cta:hover { filter: brightness(.95); }
+
+  /* Cards simple */
+  .card {
+    background: rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  }
+
+  /* List layanan */
+  .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+  .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
+  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .grid-3 { grid-template-columns: 1fr; } }
+
+  /* Galeri thumbnails */
+  .thumbs { display:flex; flex-wrap:wrap; gap: 10px; }
+  .thumbs img {
+    width: 160px; height: 110px; object-fit: cover; border-radius: 10px;
+    cursor: zoom-in; outline: 1px solid rgba(255,255,255,.08);
+    transition: transform .15s ease, outline-color .15s ease;
+  }
+  .thumbs img:hover { transform: translateY(-2px) scale(1.02); outline-color: rgba(255,255,255,.22); }
+  @media (max-width: 600px){ .thumbs img { width: 120px; height: 84px; } }
+
+  h2 { margin: 0 0 16px; font-size: 1.8rem; }
+  p  { margin: 0 0 10px; }
+
+  /* Lightbox (zoom) */
+  .lightbox {
+    display:none; position:fixed; inset:0; z-index: 2000;
+    background: rgba(0,0,0,.92);
+    justify-content:center; align-items:center;
+  }
+  .lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 10px; }
+  .lb-close {
+    position:absolute; top:16px; right:18px; font-size: 34px; line-height:1;
+    color:#fff; cursor:pointer; user-select:none;
+  }
+  .lb-nav {
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; padding:0 12px;
+  }
+  .lb-btn {
+    font-size: 44px; color:#fff; cursor:pointer; user-select:none;
+    padding: 6px 10px; background: rgba(0,0,0,.2); border-radius: 10px;
+  }
+
+  /* WA floating stack */
+  .wa-stack {
+    position: fixed; right: 16px; bottom: 16px; z-index: 1500;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .wa-stack a img { width:62px; height:62px; }
+
+  /* Footer */
+  footer {
+    background: rgba(0,0,0,.9);
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center; padding:22px 12px; font-size:.95rem;
+  }
+
+  /* Animasi daun */
+  @keyframes fall {
+    0%   { transform: translateY(-110px) rotate(0deg); opacity:0; }
+    10%  { opacity: .9; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: .9; }
+  }
+  .leaf {
+    position: fixed; top:-110px; pointer-events:none; z-index: 5;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.25));
+  }
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
-    <img src="logo.png" alt="FLORIQUE Logo">
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#services">Layanan</a>
-        <a href="#desain">Desain Taman</a>
-        <a href="#rawatan">Rawatan Taman</a>
-        <a href="#contact">Kontak</a>
-    </nav>
+  <div class="brand">
+    <img src="logo.png" alt="FLORIQUE">
+    <div class="title">FLORIQUE</div>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
 </header>
 
-<section class="hero" id="home">
-    <h1>FLORIQUE</h1>
-    <p>Termurah di Jabodetabek</p>
-    <a class="cta" href="#contact">Konsultasi Gratis</a>
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container">
+    <h1>Jasa Taman Profesional – Termurah di Jabodetabek</h1>
+    <p>Pengalaman 12 tahun. Desain, Perawatan, Renovasi, dan Pembuatan Taman dari Nol.</p>
+    <a class="cta" href="https://wa.me/6281219228005?text=Halo%20Florique%2C%20saya%20ingin%20konsultasi%20gratis." target="_blank">Konsultasi Gratis</a>
+  </div>
 </section>
 
-<section id="about">
+<!-- Tentang -->
+<section id="tentang">
+  <div class="container card">
     <h2>Tentang Kami</h2>
-    <p style="max-width:600px;margin:0 auto;text-align:center;">
-        FLORIQUE adalah jasa profesional di bidang taman landscape, rawatan taman, renovasi taman, dan pembuatan taman dari nol. Berlokasi di Jl. Kedoya Pilar Raya, Jakarta Barat. Kami mengutamakan kualitas, estetika, dan kepuasan pelanggan.
-    </p>
+    <p>FLORIQUE adalah penyedia jasa taman landscape berlokasi di <strong>Jl. Kedoya Pilar Raya, Jakarta Barat</strong>. Kami memadukan estetika, fungsionalitas, dan perawatan berkelanjutan agar taman Anda selalu segar dan nyaman.</p>
+    <p>Dengan pengalaman lebih dari 12 tahun, tim kami siap membantu mulai dari konsultasi, desain, pengerjaan, sampai rawatan rutin.</p>
+    <p><em>Tagline:</em> <strong>Termurah di Jabodetabek</strong> dengan hasil rapi & profesional.</p>
+  </div>
 </section>
 
-<section id="services">
-    <h2>Layanan Kami</h2>
-    <ul style="max-width:600px;margin:0 auto;">
+<!-- Layanan -->
+<section id="layanan">
+  <div class="container grid-2">
+    <div class="card">
+      <h2>Layanan Kami</h2>
+      <ul>
         <li>Jasa Desain Taman Landscape</li>
-        <li>Rawatan Taman</li>
+        <li>Perawatan (Rawatan) Taman</li>
         <li>Renovasi Taman</li>
         <li>Pembuatan Taman dari Nol</li>
-    </ul>
-</section>
-
-<section id="desain">
-    <h2>Contoh Desain Taman</h2>
-    <div class="gallery-slider" id="desain-slider">
-        <img src="desain_taman/desain1.jpg" alt="Desain 1">
-        <img src="desain_taman/desain2.jpg" alt="Desain 2">
-        <img src="desain_taman/desain3.jpg" alt="Desain 3">
-        <img src="desain_taman/desain4.jpg" alt="Desain 4">
-        <img src="desain_taman/desain5.jpg" alt="Desain 5">
-        <img src="desain_taman/desain6.jpg" alt="Desain 6">
-        <img src="desain_taman/desain7.jpg" alt="Desain 7">
-        <img src="desain_taman/desain8.jpg" alt="Desain 8">
-        <img src="desain_taman/desain9.jpg" alt="Desain 9">
-        <img src="desain_taman/desain10.jpg" alt="Desain 10">
+      </ul>
     </div>
-</section>
-
-<section id="rawatan">
-    <h2>Contoh Rawatan Taman</h2>
-    <div class="gallery-slider" id="rawatan-slider">
-        <img src="perawatan_taman/rawatan1.jpg" alt="Rawatan 1">
-        <img src="perawatan_taman/rawatan2.jpg" alt="Rawatan 2">
-        <img src="perawatan_taman/rawatan3.jpg" alt="Rawatan 3">
-        <img src="perawatan_taman/rawatan4.jpg" alt="Rawatan 4">
-        <img src="perawatan_taman/rawatan5.jpg" alt="Rawatan 5">
-        <img src="perawatan_taman/rawatan6.jpg" alt="Rawatan 6">
-        <img src="perawatan_taman/rawatan7.jpg" alt="Rawatan 7">
-        <img src="perawatan_taman/rawatan8.jpg" alt="Rawatan 8">
-        <img src="perawatan_taman/rawatan9.jpg" alt="Rawatan 9">
-        <img src="perawatan_taman/rawatan10.jpg" alt="Rawatan 10">
-        <img src="perawatan_taman/rawatan11.jpg" alt="Rawatan 11">
-        <img src="perawatan_taman/rawatan12.jpg" alt="Rawatan 12">
-        <img src="perawatan_taman/rawatan13.jpg" alt="Rawatan 13">
-        <img src="perawatan_taman/rawatan14.jpg" alt="Rawatan 14">
-        <img src="perawatan_taman/rawatan15.jpg" alt="Rawatan 15">
-        <img src="perawatan_taman/rawatan16.jpg" alt="Rawatan 16">
-        <img src="perawatan_taman/rawatan17.jpg" alt="Rawatan 17">
+    <div class="card">
+      <h2>Kenapa FLORIQUE?</h2>
+      <ul>
+        <li>Konsultasi gratis & cepat</li>
+        <li>Material tanaman berkualitas</li>
+        <li>Tim berpengalaman & rapi</li>
+        <li>Harga fleksibel – sesuai budget</li>
+      </ul>
     </div>
+  </div>
 </section>
 
-<section id="contact">
-    <h2>Kontak Kami</h2>
-    <p style="text-align:center;">Jl. Kedoya Pilar Raya, Jakarta Barat</p>
+<!-- Galeri -->
+<section id="galeri">
+  <div class="container">
+    <div class="card" style="margin-bottom:18px;">
+      <h2>Contoh Desain Taman</h2>
+      <p>Klik gambar untuk perbesar.</p>
+      <div class="thumbs" id="desainThumbs">
+        <img loading="lazy" src="desain_taman/desain1.jpg"  alt="Desain 1"  onclick="openLightbox('desain',0)">
+        <img loading="lazy" src="desain_taman/desain2.jpg"  alt="Desain 2"  onclick="openLightbox('desain',1)">
+        <img loading="lazy" src="desain_taman/desain3.jpg"  alt="Desain 3"  onclick="openLightbox('desain',2)">
+        <img loading="lazy" src="desain_taman/desain4.jpg"  alt="Desain 4"  onclick="openLightbox('desain',3)">
+        <img loading="lazy" src="desain_taman/desain5.jpg"  alt="Desain 5"  onclick="openLightbox('desain',4)">
+        <img loading="lazy" src="desain_taman/desain6.jpg"  alt="Desain 6"  onclick="openLightbox('desain',5)">
+        <img loading="lazy" src="desain_taman/desain7.jpg"  alt="Desain 7"  onclick="openLightbox('desain',6)">
+        <img loading="lazy" src="desain_taman/desain8.jpg"  alt="Desain 8"  onclick="openLightbox('desain',7)">
+        <img loading="lazy" src="desain_taman/desain9.jpg"  alt="Desain 9"  onclick="openLightbox('desain',8)">
+        <img loading="lazy" src="desain_taman/desain10.jpg" alt="Desain 10" onclick="openLightbox('desain',9)">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contoh Rawatan Taman</h2>
+      <p>Klik gambar untuk perbesar.</p>
+      <div class="thumbs" id="rawatanThumbs">
+        <img loading="lazy" src="perawatan_taman/rawatan1.jpg"  alt="Rawatan 1"  onclick="openLightbox('rawatan',0)">
+        <img loading="lazy" src="perawatan_taman/rawatan2.jpg"  alt="Rawatan 2"  onclick="openLightbox('rawatan',1)">
+        <img loading="lazy" src="perawatan_taman/rawatan3.jpg"  alt="Rawatan 3"  onclick="openLightbox('rawatan',2)">
+        <img loading="lazy" src="perawatan_taman/rawatan4.jpg"  alt="Rawatan 4"  onclick="openLightbox('rawatan',3)">
+        <img loading="lazy" src="perawatan_taman/rawatan5.jpg"  alt="Rawatan 5"  onclick="openLightbox('rawatan',4)">
+        <img loading="lazy" src="perawatan_taman/rawatan6.jpg"  alt="Rawatan 6"  onclick="openLightbox('rawatan',5)">
+        <img loading="lazy" src="perawatan_taman/rawatan7.jpg"  alt="Rawatan 7"  onclick="openLightbox('rawatan',6)">
+        <img loading="lazy" src="perawatan_taman/rawatan8.jpg"  alt="Rawatan 8"  onclick="openLightbox('rawatan',7)">
+        <img loading="lazy" src="perawatan_taman/rawatan9.jpg"  alt="Rawatan 9"  onclick="openLightbox('rawatan',8)">
+        <img loading="lazy" src="perawatan_taman/rawatan10.jpg" alt="Rawatan 10" onclick="openLightbox('rawatan',9)">
+        <img loading="lazy" src="perawatan_taman/rawatan11.jpg" alt="Rawatan 11" onclick="openLightbox('rawatan',10)">
+        <img loading="lazy" src="perawatan_taman/rawatan12.jpg" alt="Rawatan 12" onclick="openLightbox('rawatan',11)">
+        <img loading="lazy" src="perawatan_taman/rawatan13.jpg" alt="Rawatan 13" onclick="openLightbox('rawatan',12)">
+        <img loading="lazy" src="perawatan_taman/rawatan14.jpg" alt="Rawatan 14" onclick="openLightbox('rawatan',13)">
+        <img loading="lazy" src="perawatan_taman/rawatan15.jpg" alt="Rawatan 15" onclick="openLightbox('rawatan',14)">
+        <img loading="lazy" src="perawatan_taman/rawatan16.jpg" alt="Rawatan 16" onclick="openLightbox('rawatan',15)">
+        <img loading="lazy" src="perawatan_taman/rawatan17.jpg" alt="Rawatan 17" onclick="openLightbox('rawatan',16)">
+      </div>
+    </div>
+  </div>
 </section>
 
-<a href="https://wa.me/081219228005" target="_blank" class="wa-float" style="bottom:20px;">
-    <img src="wa.png" alt="WA"> Hidayat
-</a>
-<a href="https://wa.me/088973422583" target="_blank" class="wa-float" style="bottom:80px;">
-    <img src="wa.png" alt="WA"> Syahlani
-</a>
-
-<div class="leaf" style="left:5%; animation-duration:8s;"></div>
-<div class="leaf" style="left:20%; animation-duration:10s;"></div>
-<div class="leaf" style="left:35%; animation-duration:7s;"></div>
-<div class="leaf" style="left:50%; animation-duration:9s;"></div>
-<div class="leaf" style="left:65%; animation-duration:6s;"></div>
-<div class="leaf" style="left:80%; animation-duration:11s;"></div>
-<div class="leaf" style="left:90%; animation-duration:8s;"></div>
-
-<footer>
-    <p>FLORIQUE - Termurah di Jabodetabek</p>
-    <p>Jl. Kedoya Pilar Raya - Jakarta Barat</p>
+<!-- Kontak / Footer -->
+<footer id="kontak">
+  <div class="container">
+    <p><strong>Alamat:</strong> Jl. Kedoya Pilar Raya, Jakarta Barat</p>
+    <p><strong>WhatsApp:</strong> Hidayat: <a href="https://wa.me/6281219228005" target="_blank" style="color:#2ecc71;">0812 1922 8005</a> &nbsp; | &nbsp; Syahlani: <a href="https://wa.me/6288973422583" target="_blank" style="color:#2ecc71;">0889 7342 2583</a></p>
+    <p>© 2025 FLORIQUE — Jasa Taman Profesional. Termurah di Jabodetabek.</p>
+  </div>
 </footer>
 
+<!-- Floating WA (dua kontak) -->
+<div class="wa-stack">
+  <a href="https://wa.me/6281219228005?text=Halo%20Florique%2C%20saya%20ingin%20konsultasi%20gratis." target="_blank" aria-label="Chat WA Hidayat">
+    <img src="wa.png" alt="WhatsApp Hidayat">
+  </a>
+  <a href="https://wa.me/6288973422583?text=Halo%20Florique%2C%20saya%20ingin%20konsultasi%20gratis." target="_blank" aria-label="Chat WA Syahlani">
+    <img src="wa.png" alt="WhatsApp Syahlani">
+  </a>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-nav">
+    <span class="lb-btn" onclick="event.stopPropagation(); changeSlide(-1)">&#10094;</span>
+    <span class="lb-btn" onclick="event.stopPropagation(); changeSlide(1)">&#10095;</span>
+  </div>
+  <span class="lb-close" onclick="closeLightbox(event)">&times;</span>
+  <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+<!-- Animasi 7 daun (ukuran & durasi beda-beda) -->
+<img src="leaf.png" class="leaf" style="left:5%;  width:26px; animation: fall 9s linear infinite; animation-delay:0s;">
+<img src="leaf.png" class="leaf" style="left:18%; width:34px; animation: fall 12s linear infinite; animation-delay:1s;">
+<img src="leaf.png" class="leaf" style="left:33%; width:22px; animation: fall 10.5s linear infinite; animation-delay:.5s;">
+<img src="leaf.png" class="leaf" style="left:50%; width:30px; animation: fall 14s linear infinite; animation-delay:2s;">
+<img src="leaf.png" class="leaf" style="left:66%; width:24px; animation: fall 11.5s linear infinite; animation-delay:1.2s;">
+<img src="leaf.png" class="leaf" style="left:78%; width:36px; animation: fall 13s linear infinite; animation-delay:.8s;">
+<img src="leaf.png" class="leaf" style="left:90%; width:20px; animation: fall 9.5s linear infinite; animation-delay:1.6s;">
+
 <script>
-function autoScroll(id,speed){const slider=document.getElementById(id);let pos=0;
-setInterval(()=>{pos+=1;if(pos>=slider.scrollWidth-slider.clientWidth) pos=0;
-slider.scrollLeft=pos;},speed);}
-autoScroll('desain-slider',50);
-autoScroll('rawatan-slider',50);
+  // Data sumber gambar untuk lightbox
+  const slides = {
+    desain: [
+      "desain_taman/desain1.jpg","desain_taman/desain2.jpg","desain_taman/desain3.jpg",
+      "desain_taman/desain4.jpg","desain_taman/desain5.jpg","desain_taman/desain6.jpg",
+      "desain_taman/desain7.jpg","desain_taman/desain8.jpg","desain_taman/desain9.jpg",
+      "desain_taman/desain10.jpg"
+    ],
+    rawatan: [
+      "perawatan_taman/rawatan1.jpg","perawatan_taman/rawatan2.jpg","perawatan_taman/rawatan3.jpg",
+      "perawatan_taman/rawatan4.jpg","perawatan_taman/rawatan5.jpg","perawatan_taman/rawatan6.jpg",
+      "perawatan_taman/rawatan7.jpg","perawatan_taman/rawatan8.jpg","perawatan_taman/rawatan9.jpg",
+      "perawatan_taman/rawatan10.jpg","perawatan_taman/rawatan11.jpg","perawatan_taman/rawatan12.jpg",
+      "perawatan_taman/rawatan13.jpg","perawatan_taman/rawatan14.jpg","perawatan_taman/rawatan15.jpg",
+      "perawatan_taman/rawatan16.jpg","perawatan_taman/rawatan17.jpg"
+    ]
+  };
+
+  let currentType = 'desain';
+  let currentIndex = 0;
+
+  function openLightbox(type, index){
+    currentType = type;
+    currentIndex = index;
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = slides[currentType][currentIndex];
+    lb.style.display = 'flex';
+  }
+
+  function changeSlide(step){
+    const arr = slides[currentType];
+    currentIndex = (currentIndex + step + arr.length) % arr.length;
+    document.getElementById('lightbox-img').src = arr[currentIndex];
+  }
+
+  function closeLightbox(e){
+    // tutup kalau klik overlay/close, tapi jangan kalau klik gambar
+    if (e && e.target && e.target.id === 'lightbox-img') return;
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  // Keyboard nav untuk lightbox
+  document.addEventListener('keydown', (e)=>{
+    const lb = document.getElementById('lightbox');
+    if (lb.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeLightbox(e);
+    if (e.key === 'ArrowRight') changeSlide(1);
+    if (e.key === 'ArrowLeft') changeSlide(-1);
+  });
 </script>
 
 </body>
