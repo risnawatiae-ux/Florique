@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FLORIQUE - Jasa Taman Profesional, pengalaman 12 tahun, termurah di Jabodetabek. Konsultasi Gratis.">
+<title>FLORIQUE - Jasa Taman Profesional</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:'Roboto',sans-serif;
+    background:url('latar_belakang.png') no-repeat center center fixed;
+    background-size:cover;
+    position:relative;
+}
+body::before{
+    content:"";position:fixed;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,128,0,0.3);pointer-events:none;z-index:-1;
+}
+header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 20px;background:rgba(0,0,0,0.8);color:#fff;
+    position:sticky;top:0;z-index:500;
+}
+header img{height:60px;}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:500;}
+nav a:hover{color:#ffeb3b;}
+.hero{
+    height:80vh;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;text-align:center;
+    color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,0.7);
+}
+.hero h1{font-size:3em;margin-bottom:10px;}
+.hero p{font-size:1.5em;margin-bottom:20px;font-weight:700;}
+.cta{
+    padding:12px 25px;background:linear-gradient(45deg,#2e7d32,#81c784);
+    color:#fff;text-decoration:none;font-weight:700;border-radius:8px;
+    transition:0.5s;display:inline-block;
+}
+.cta:hover{transform:scale(1.1);background:linear-gradient(45deg,#1b5e20,#66bb6a);}
+section{padding:60px 20px;}
+h2,h3{text-align:center;font-weight:700;margin-bottom:30px;}
+.gallery-slider{
+    display:flex;overflow-x:auto;gap:10px;
+    scroll-behavior:smooth;padding-bottom:10px;
+}
+.gallery-slider::-webkit-scrollbar{height:8px;}
+.gallery-slider::-webkit-scrollbar-thumb{background:#2e7d32;border-radius:4px;}
+.gallery-slider img{
+    flex:0 0 auto;width:200px;height:150px;object-fit:cover;
+    border-radius:8px;transition:0.3s;cursor:pointer;
+}
+.gallery-slider img:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+.wa-float{
+    position:fixed;right:20px;background:#25D366;color:#fff;
+    padding:15px 20px;border-radius:50px;font-size:18px;
+    text-decoration:none;display:flex;align-items:center;
+    box-shadow:0 6px 12px rgba(0,0,0,0.3);z-index:1000;transition:0.3s;
+}
+.wa-float:hover{transform:scale(1.2);}
+.wa-float img{height:25px;margin-right:10px;}
+.leaf{
+    position:absolute;width:30px;height:30px;
+    background:url('leaf.png') no-repeat center/contain;top:-50px;
+    animation:fall linear infinite;
+}
+@keyframes fall{0%{transform:translateY(0) rotate(0deg);}100%{transform:translateY(100vh) rotate(360deg);}}
+footer{background:rgba(0,0,0,0.8);color:#fff;text-align:center;padding:20px;}
+@media(max-width:768px){.gallery-slider img{width:150px;height:100px;}}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="FLORIQUE Logo">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#services">Layanan</a>
+        <a href="#desain">Desain Taman</a>
+        <a href="#rawatan">Rawatan Taman</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>FLORIQUE</h1>
+    <p>Termurah di Jabodetabek</p>
+    <a class="cta" href="#contact">Konsultasi Gratis</a>
+</section>
+
+<section id="about">
+    <h2>Tentang Kami</h2>
+    <p style="max-width:600px;margin:0 auto;text-align:center;">
+        FLORIQUE adalah jasa profesional di bidang taman landscape, rawatan taman, renovasi taman, dan pembuatan taman dari nol. Berlokasi di Jl. Kedoya Pilar Raya, Jakarta Barat. Kami mengutamakan kualitas, estetika, dan kepuasan pelanggan.
+    </p>
+</section>
+
+<section id="services">
+    <h2>Layanan Kami</h2>
+    <ul style="max-width:600px;margin:0 auto;">
+        <li>Jasa Desain Taman Landscape</li>
+        <li>Rawatan Taman</li>
+        <li>Renovasi Taman</li>
+        <li>Pembuatan Taman dari Nol</li>
+    </ul>
+</section>
+
+<section id="desain">
+    <h2>Contoh Desain Taman</h2>
+    <div class="gallery-slider" id="desain-slider">
+        <img src="desain_taman/desain1.jpg" alt="Desain 1">
+        <img src="desain_taman/desain2.jpg" alt="Desain 2">
+        <img src="desain_taman/desain3.jpg" alt="Desain 3">
+        <img src="desain_taman/desain4.jpg" alt="Desain 4">
+        <img src="desain_taman/desain5.jpg" alt="Desain 5">
+        <img src="desain_taman/desain6.jpg" alt="Desain 6">
+        <img src="desain_taman/desain7.jpg" alt="Desain 7">
+        <img src="desain_taman/desain8.jpg" alt="Desain 8">
+        <img src="desain_taman/desain9.jpg" alt="Desain 9">
+        <img src="desain_taman/desain10.jpg" alt="Desain 10">
+    </div>
+</section>
+
+<section id="rawatan">
+    <h2>Contoh Rawatan Taman</h2>
+    <div class="gallery-slider" id="rawatan-slider">
+        <img src="perawatan_taman/rawatan1.jpg" alt="Rawatan 1">
+        <img src="perawatan_taman/rawatan2.jpg" alt="Rawatan 2">
+        <img src="perawatan_taman/rawatan3.jpg" alt="Rawatan 3">
+        <img src="perawatan_taman/rawatan4.jpg" alt="Rawatan 4">
+        <img src="perawatan_taman/rawatan5.jpg" alt="Rawatan 5">
+        <img src="perawatan_taman/rawatan6.jpg" alt="Rawatan 6">
+        <img src="perawatan_taman/rawatan7.jpg" alt="Rawatan 7">
+        <img src="perawatan_taman/rawatan8.jpg" alt="Rawatan 8">
+        <img src="perawatan_taman/rawatan9.jpg" alt="Rawatan 9">
+        <img src="perawatan_taman/rawatan10.jpg" alt="Rawatan 10">
+        <img src="perawatan_taman/rawatan11.jpg" alt="Rawatan 11">
+        <img src="perawatan_taman/rawatan12.jpg" alt="Rawatan 12">
+        <img src="perawatan_taman/rawatan13.jpg" alt="Rawatan 13">
+        <img src="perawatan_taman/rawatan14.jpg" alt="Rawatan 14">
+        <img src="perawatan_taman/rawatan15.jpg" alt="Rawatan 15">
+        <img src="perawatan_taman/rawatan16.jpg" alt="Rawatan 16">
+        <img src="perawatan_taman/rawatan17.jpg" alt="Rawatan 17">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Kontak Kami</h2>
+    <p style="text-align:center;">Jl. Kedoya Pilar Raya, Jakarta Barat</p>
+</section>
+
+<a href="https://wa.me/081219228005" target="_blank" class="wa-float" style="bottom:20px;">
+    <img src="wa.png" alt="WA"> Hidayat
+</a>
+<a href="https://wa.me/088973422583" target="_blank" class="wa-float" style="bottom:80px;">
+    <img src="wa.png" alt="WA"> Syahlani
+</a>
+
+<div class="leaf" style="left:5%; animation-duration:8s;"></div>
+<div class="leaf" style="left:20%; animation-duration:10s;"></div>
+<div class="leaf" style="left:35%; animation-duration:7s;"></div>
+<div class="leaf" style="left:50%; animation-duration:9s;"></div>
+<div class="leaf" style="left:65%; animation-duration:6s;"></div>
+<div class="leaf" style="left:80%; animation-duration:11s;"></div>
+<div class="leaf" style="left:90%; animation-duration:8s;"></div>
+
+<footer>
+    <p>FLORIQUE - Termurah di Jabodetabek</p>
+    <p>Jl. Kedoya Pilar Raya - Jakarta Barat</p>
+</footer>
+
+<script>
+function autoScroll(id,speed){const slider=document.getElementById(id);let pos=0;
+setInterval(()=>{pos+=1;if(pos>=slider.scrollWidth-slider.clientWidth) pos=0;
+slider.scrollLeft=pos;},speed);}
+autoScroll('desain-slider',50);
+autoScroll('rawatan-slider',50);
+</script>
+
+</body>
+</html>
